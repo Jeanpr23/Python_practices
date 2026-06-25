@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Shopping Calculator</title>
+
+    <style>
+        body {
+            font-family: arial, sans-serif;
+
+            background-color: black;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <h1>Shopping Calculator</h1>
+
+    <style>
+
+        h1 {
+            color: white;
+        }
+    </style>
+
+    <input type="text" id="itemInput" placeholder="Enter item">
+
+    <button onclick="addItem()">Add Item</button>
+
+    <h2 id="total">Total: $0.00</h2>
+
+    <style>
+
+        h2 {
+
+            color: white;
+        }
+    </style>
+
+    <script>
+
+        let prices = {
+            "molde": 2.17,
+            "jamon": 5.44,
+            "hotdogs": 5.44,
+            "limon": 0.20,
+            "jugo de fruitpunch": 2.50,
+            "jugo de china": 2.29,
+            "7up": 2.49,
+            "m&m": 1.99,
+            "kinder bueno": 1.99,
+            "aguacate": 2.50,
+            "leche mediana": 3.49
+        };
+
+        let total = 0;
+
+        function addItem() {
+
+            let item =
+            document.getElementById("itemInput").value.toLowerCase();
+
+            if (prices[item]) {
+
+                total += prices[item];
+
+                document.getElementById("total").innerText = 
+                "Total: $" + total.toFixed(2);
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
