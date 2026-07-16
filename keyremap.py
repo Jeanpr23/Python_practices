@@ -1,6 +1,8 @@
 import keyboard
 
 
-keyboard.hook_key(78, lambda e: keyboard.press_and_release("backspace"))
+keyboard.remap_key(78, "backspace")
+
+print("Backspace replacement working!")
 
 keyboard.wait()
