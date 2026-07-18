@@ -116,7 +116,7 @@ def check_answer():
 
 answer = st.text_input("Your Answer", key="answer", on_change=check_answer)
 
-# Show message for 1 second
+# Show Wrong! message for 1 second
 
 if time.time() - st.session_state.wrong_time < 1:
     st.write("Wrong!")
