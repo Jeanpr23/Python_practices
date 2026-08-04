@@ -4,7 +4,7 @@ from streamlit_cookies_manager import EncryptedCookieManager
 
 cookies = EncryptedCookieManager(
     prefix="AudioMaker/",
-    password="AudioMaker_coooooooookie_2006_secureeeeeeeee_llave"
+    password=""
 )
 
 def get_visitor_id():
