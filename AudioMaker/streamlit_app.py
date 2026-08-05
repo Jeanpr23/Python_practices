@@ -21,6 +21,11 @@ if not FREE_MODE:
 clean_folder("uploads", 24)
 clean_folder("generated", 24)
 
+import os
+
+os.makedirs("uploads", exist_ok=True)
+os.makedirs"generated", exist_ok=True)
+
 
 st.set_page_config(
     page_title="Manipulation",
