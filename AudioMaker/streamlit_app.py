@@ -11,14 +11,7 @@ from japanese_twisters import generate_japanese_twister
 from tts.speech_generator import generate_audio
 from audio.merge_audio import merge_audio
 from cleanup import clean_folder
-from auth.discord_login import get_discord_login_url
-from auth.discord_login import get_access_token
-from auth.discord_login import get_discord_user
 from auth.session import get_current_user
-from database.database import create_database, create_user
-from auth.visitor import get_visitor_id
-from database.user_manager import get_current_account
-from database.database import can_use, add_usage, get_usage
 from components.info_box import show_info_box
 from config import FREE_MODE
 
