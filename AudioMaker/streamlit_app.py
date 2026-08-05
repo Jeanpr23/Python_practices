@@ -11,7 +11,6 @@ from japanese_twisters import generate_japanese_twister
 from tts.speech_generator import generate_audio
 from audio.merge_audio import merge_audio
 from cleanup import clean_folder
-from auth.session import get_current_user
 from components.info_box import show_info_box
 from config import FREE_MODE
 
