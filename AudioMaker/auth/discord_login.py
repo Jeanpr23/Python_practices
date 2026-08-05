@@ -1,9 +1,9 @@
 import requests
 import streamlit as st
 
-DISCORD_CLIENT_ID = st.secrets["DISCORD_CLIENT_ID"]
-DISCORD_CLIENT_SECRET = st.secrets["DISCORD_CLIENT_SECRET"]
-DISCORD_REDIRECT_URI = st.secrets["DISCORD_REDIRECT_URI"]
+DISCORD_CLIENT_ID = st.secrets[""]
+DISCORD_CLIENT_SECRET = st.secrets[""]
+DISCORD_REDIRECT_URI = st.secrets[""]
 
 
 def get_discord_login_url():
@@ -23,11 +23,11 @@ def get_access_token(code):
 
     data = {
 
-        "client_id": DISCORD_CLIENT_ID,
+        "client_id": ,
 
-        "client_secret": DISCORD_CLIENT_SECRET,
+        "client_secret": ,
 
-        "grant_type": "authorization_code",
+        "grant_type": "",
 
         "code": code,
 
