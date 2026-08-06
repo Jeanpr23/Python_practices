@@ -27,8 +27,8 @@ import imageio_ffmpeg
 os.makedirs("uploads", exist_ok=True)
 os.makedirs("generated", exist_ok=True)
 
-st.write(FFmpeg:", imageio_ffmpeg.get_ffmpeg_exe())
-st.write("Exists", os.path.exists(imageio_ffmpeg.get_ffmpeg_exe()))
+st.write("FFmpeg:", imageio_ffmpeg.get_ffmpeg_exe())
+st.write("Exists:", os.path.exists(imageio_ffmpeg.get_ffmpeg_exe()))
 
 st.set_page_config(
     page_title="Manipulation",
