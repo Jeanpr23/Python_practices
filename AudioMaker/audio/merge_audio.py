@@ -1,11 +1,9 @@
 from pydub import AudioSegment
-from pydub import utils
 import imageio_ffmpeg
 
 ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
 
 AudioSegment.converter = ffmpeg
-utils.get_prober_name = lambda: ffmpeg
 
 def merge_audio(tts_file, user_file, output_file):
 
