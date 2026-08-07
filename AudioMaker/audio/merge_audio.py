@@ -1,7 +1,7 @@
 from pydub import AudioSegment
 import imageio_ffmpeg
 from pydub import utils
-import shutlil
+import shulil
 
 ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
 
