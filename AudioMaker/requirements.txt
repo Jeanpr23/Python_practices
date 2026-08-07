@@ -1,0 +1,9 @@
+streamlit
+pydub
+numpy
+edge-tts
+requests
+yt-dlp
+librosa
+soundfile
+scipy
