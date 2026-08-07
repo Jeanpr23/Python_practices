@@ -178,6 +178,18 @@ if generate_button:
            tts_path
         )
 
+        import os
+
+        st.write("TTS PATH:", tts_path)
+
+        if os.path.exists(tts_path):
+            st.write("TTS SIZE:", os.path.getsize(tts_path))
+            st.audio(tts_path)
+
+        else:
+            st.error("TTS file does not exists")
+            st.stop()
+
         final_path = "generated/finished.mp3"
 
         merge_audio(
