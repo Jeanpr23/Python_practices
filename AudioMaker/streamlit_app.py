@@ -1,8 +1,10 @@
+import imageio_ffmpeg
 import shutil
 import streamlit as st
 
 st.write("FFMPEG:", shutil.which("ffmpeg"))
 st.write("FFPROBE:", shutil.which("ffprobe"))
+st.write("ImageIO FFmpeg:", imageio_ffmpeg.get_ffmpeg_exe())
 
 import os
 
