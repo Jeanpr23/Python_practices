@@ -1,23 +1,31 @@
-from pydub import AudioSegment
+import subprocess
+
 import imageio_ffmpeg
-
-ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
-
-AudioSegment.converter = ffmpeg
 
 def merge_audio(tts_file, user_file, output_file):
 
-    tts_audio = AudioSegment.from_file(
-        tts_file
+    ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
+
+    command = [
+        ffmpeg,
+        "-i", tts_file,
+        "-1", user_file,
+        "-filter_complex",
+        "[0:a][1:a]concat=n=2:v=0:a=1[out]",
+        "-map", "[out]",
+        "-y",
+        output_file
+
+    ]
+
+    result = subprocess.run(
+         command,
+         stdout=subprocess.PIPE,
+         stderr=subprocess.PIPE,
+         text=True
     )
 
-    user_audio = AudioSegment.from_file(
-        user_file
-    )
-
-    final_audio = tts_audio + user_audio
-
-    final_audio.export(
-        output_file,
-        format="mp3"
-    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"FFmpeg error:\n{result.stderr}"
+        )
