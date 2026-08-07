@@ -1,7 +1,4 @@
 import streamlit as st
-
-
-
 import os
 
 os.makedirs("uploads", exist_ok=True)
