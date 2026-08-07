@@ -1,9 +1,6 @@
-shutil
 import streamlit as st
 
 
-st.write("FFMPEG:", shutil.which("ffmpeg"))
-st.write("FFPROBE:", shutil.which("ffprobe"))
 
 import os
 
