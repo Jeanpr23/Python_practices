@@ -18,8 +18,8 @@ if not FREE_MODE:
     
     create_database()
 
-clean_folder("uploads", 24)
-clean_folder("generated", 24)
+# clean_folder("uploads", 24)
+# clean_folder("generated", 24)
 
 import os
 import imageio_ffmpeg
