@@ -110,15 +110,7 @@ audio_file = st.file_uploader(
 
 if audio_file:
 
-    import uuid
-
-    if "session_id" not in st.session_state:
-        st.session_state.session_id = str(uuid.uuid4())
-
-    user_audio_path = (
-        f"uploads/user_{st.session_state.session_id}.mp3"
-
-    )
+    user_audio_path = "uploads/user_audio.mp3"
 
     with open(user_audio_path, "wb") as f:
         f.write(audio_file.getbuffer())
@@ -178,10 +170,7 @@ if generate_button:
 
         # Create tts
 
-        tts_path = (
-            f"generated/tongue_twister_{st.session_state.session_id}.mp3"
-        )
-
+        tts_path = "generated/tongue_twister.mp3"
 
         generate_audio(
            twister,
@@ -189,9 +178,7 @@ if generate_button:
            tts_path
         )
 
-        final_path = (
-            f"generated/finished_{st.session_state.session_id}.mp3"
-        )
+        final_path = "generated/finished.mp3"
 
         merge_audio(
             tts_path,
