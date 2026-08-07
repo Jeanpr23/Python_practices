@@ -1,4 +1,9 @@
+shutil
 import streamlit as st
+
+st.write("FFMPEG:", shutil.wich("ffmpeg"))
+st.write("FFPROBE:", shutil.wich("ffprobe"))
+
 import os
 
 os.makedirs("uploads", exist_ok=True)
