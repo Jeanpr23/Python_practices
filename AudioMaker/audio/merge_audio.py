@@ -1,5 +1,4 @@
 import subprocess
-
 import imageio_ffmpeg
 
 def merge_audio(tts_file, user_file, output_file):
@@ -8,12 +7,13 @@ def merge_audio(tts_file, user_file, output_file):
 
     command = [
         ffmpeg,
-        "-i", tts_file,
-        "-1", user_file,
-        "-filter_complex",
-        "[0:a][1:a]concat=n=2:v=0:a=1[out]",
-        "-map", "[out]",
         "-y",
+        "-i", tts_file,
+        "-i", user_file,
+        "-filter_complex",
+        "[0:a:0][1:a:0]concat=n=2:v=0:a=1[out]",
+        "-map", "[out]",
+        "-c:a", "libmp3lame",
         output_file
 
     ]
@@ -27,5 +27,8 @@ def merge_audio(tts_file, user_file, output_file):
 
     if result.returncode != 0:
         raise RuntimeError(
-            f"FFmpeg error:\n{result.stderr}"
+            "FFmpeg command:\n"
+            + " ".join(command)
+            + "\n\nFFmpeg error:\n"
+            + result.stderr
         )
