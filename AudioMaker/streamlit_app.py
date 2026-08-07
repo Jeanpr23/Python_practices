@@ -1,4 +1,9 @@
 import streamlit as st
+import os
+
+os.makedirs("uploads", exist_ok=True)
+os.makedirs("generated", exist_ok=True)
+
 from config import ENABLE_MANIPULATION
 
 if not ENABLE_MANIPULATION:
