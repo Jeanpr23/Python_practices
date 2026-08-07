@@ -1,4 +1,4 @@
-shutil
+import shutil
 import streamlit as st
 
 st.write("FFMPEG:", shutil.wich("ffmpeg"))
