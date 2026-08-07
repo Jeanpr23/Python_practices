@@ -2,7 +2,7 @@ import streamlit as st
 from config import ENABLE_MANIPULATION
 
 if not ENABLE_MANIPULATION:
-    st.warning("This pae is currently disabled.")
+    st.warning("This page is currently disabled.")
     st.stop()
 
     
