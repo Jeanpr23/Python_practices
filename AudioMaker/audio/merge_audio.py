@@ -9,7 +9,7 @@ utils.get_prober_name = lambda: ffmpeg
 
 def merge_audio(tts_file, user_file, output_file):
 
-    tts_audio = AudioSegment.from_mp3(
+    tts_audio = AudioSegment.from_file(
         tts_file
     )
 
