@@ -1,11 +1,4 @@
-import imageio_ffmpeg
-import shutil
 import streamlit as st
-
-st.write("FFMPEG:", shutil.which("ffmpeg"))
-st.write("FFPROBE:", shutil.which("ffprobe"))
-st.write("ImageIO FFmpeg:", imageio_ffmpeg.get_ffmpeg_exe())
-
 import os
 
 os.makedirs("uploads", exist_ok=True)
@@ -16,7 +9,6 @@ from config import ENABLE_MANIPULATION
 if not ENABLE_MANIPULATION:
     st.warning("This page is currently disabled.")
     st.stop()
-
     
 from russian_twisters import generate_russian_twister
 from japanese_twisters import generate_japanese_twister
