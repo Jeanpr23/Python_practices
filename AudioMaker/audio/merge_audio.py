@@ -8,12 +8,14 @@ def merge_audio(tts_file, user_file, output_file):
 
     command = [
         ffmpeg,
+        "-y",
         "-i", tts_file,
         "-i", user_file,
         "-filter_complex",
         "[0:a][1:a]concat=n=2:v=0:a=1[out]",
         "-map", "[out]",
-        "-y",
+        "-c:a", "libmp3lame",
+        "-q:a", "0",
         output_file
     ]
 
@@ -26,5 +28,8 @@ def merge_audio(tts_file, user_file, output_file):
 
     if result.returncode != 0:
         raise RuntimeError(
-            f"FFmpeg error:\n{result.stderr}"
+            "FFmpeg command:\n"
+            + " ".join(command)
+            + "\n\nFFmpeg error:\n"
+            + result.stderr
         )
