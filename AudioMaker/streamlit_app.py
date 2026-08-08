@@ -37,14 +37,19 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-/* Hidding main menu of streamlit */
-#MainMenu {
+/* Hide Streamlit toolbar */
+[data-testid="stToolbar"] {
     visibility: hidden;
 }
 
-/* Hidding footer */
-footer {
+/* Hide Streamlit footer */
+[data-testid="stFooter"] {
     visibility: hidden;
+}
+
+/* Hide GitHub / profile area */
+[data-testid="stDecoration"] {
+    display: none;
 }
 </style>
 """, unsafe_allow_html=True)
