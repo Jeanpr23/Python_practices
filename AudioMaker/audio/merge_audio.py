@@ -9,13 +9,19 @@ def merge_audio(tts_file, user_file, output_file):
     command = [
         ffmpeg,
         "-y",
+        
         "-i", tts_file,
         "-i", user_file,
+        
         "-filter_complex",
         "[0:a][1:a]concat=n=2:v=0:a=1[out]",
+        
         "-map", "[out]",
+        
         "-c:a", "libmp3lame",
-        "-q:a", "0",
+        
+        "-b:a", "320k",
+        
         output_file
     ]
 
