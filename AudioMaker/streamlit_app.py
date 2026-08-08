@@ -1,3 +1,4 @@
+import uuid
 import streamlit as st
 import os
 
@@ -51,7 +52,9 @@ audio_file = st.file_uploader(
 
 if audio_file:
 
-    user_audio_path = "uploads/user_audio.mp3"
+    session_id = str(uuid4())
+
+    user_audio_path = f"uploads/user_{session_id}.mp3"
 
     with open(user_audio_path, "wb") as f:
         f.write(audio_file.getbuffer())
