@@ -35,31 +35,6 @@ st.set_page_config(
     layout="centered"
 )
 
-st.markdown("""
-<style>
-/* Hide Streamlit toolbar */
-[data-testid="stToolbar"] {
-    visibility: hidden;
-}
-
-/* Hide Streamlit footer */
-[data-testid="stFooter"] {
-    visibility: hidden;
-}
-
-/* Hide botton-right profile/avatar */
-[data-testid="stDecoration"] {
-    display: none;
-}
-
-/* Hide Github avatar */
-[data-testid="stAppViewContainer"] ~ div {
-/* leave this alone for now */
-}
-</style>
-""", unsafe_allow_html=True)
-
-
 st.markdown(
     "<h1 style='text-align: center;'>Manipulation</h1>",
     unsafe_allow_html=True
