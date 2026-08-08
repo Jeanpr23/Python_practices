@@ -5,6 +5,11 @@ import os
 os.makedirs("uploads", exist_ok=True)
 os.makedirs("generated", exist_ok=True)
 
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+session_id = st.session_state.session_id
+
 from config import ENABLE_MANIPULATION
 
 if not ENABLE_MANIPULATION:
