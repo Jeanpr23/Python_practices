@@ -35,6 +35,20 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown("""
+<style>
+/* Hidding main menu of streamlit */
+#MainMenu {
+    visibility: hidden;
+}
+
+/* Hidding footer */
+footer {
+    visibility: hidden;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 st.markdown(
     "<h1 style='text-align: center;'>Manipulation</h1>",
