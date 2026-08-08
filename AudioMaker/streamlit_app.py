@@ -57,8 +57,6 @@ audio_file = st.file_uploader(
 
 if audio_file:
 
-    session_id = str(uuid4())
-
     user_audio_path = f"uploads/user_{session_id}.mp3"
 
     with open(user_audio_path, "wb") as f:
