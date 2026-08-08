@@ -47,9 +47,14 @@ st.markdown("""
     visibility: hidden;
 }
 
-/* Hide GitHub / profile area */
+/* Hide botton-right profile/avatar */
 [data-testid="stDecoration"] {
     display: none;
+}
+
+/* Hide Github avatar */
+[data-testid="stAppViewContainer"] ~ div {
+/* leave this alone for now */
 }
 </style>
 """, unsafe_allow_html=True)
