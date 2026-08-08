@@ -94,7 +94,7 @@ if generate_button:
 
         # Create tts
 
-        tts_path = "generated/tongue_twister.mp3"
+        tts_path = f"generated/tts_{session_id}.mp3"
 
 
         generate_audio(
@@ -103,7 +103,7 @@ if generate_button:
            tts_path
         )
 
-        final_path = "generated/finished.mp3"
+        final_path = f"generated/final_{session_id}.mp3"
 
         merge_audio(
             tts_path,
